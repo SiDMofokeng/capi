@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="capi_app.InterviewAddMember">
+    <StackLayout Spacing="0">
+
+        <!-- Navigation Bar -->
+        <Grid Padding="10" BackgroundColor="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Start">
+                <Image Source="logo.png"
+                       WidthRequest="220"
+                       HeightRequest="40"
+                       HorizontalOptions="Start" />
+            </StackLayout>
+
+            <Entry Grid.Column="1"
+                   Placeholder="Search..."
+                   FontSize="16"
+                   HeightRequest="40"
+                   BackgroundColor="#f0f0f0"
+                   HorizontalOptions="FillAndExpand"
+                   Margin="10,0" />
+
+            <StackLayout Grid.Column="2"
+                         Orientation="Horizontal"
+                         HorizontalOptions="End"
+                         VerticalOptions="Center"
+                         Spacing="10">
+                <Label Text="Owen Brooks"
+                       VerticalOptions="Center"
+                       FontSize="14"
+                       TextColor="Black"/>
+                <Frame BackgroundColor="#555"
+                       CornerRadius="100"
+                       HeightRequest="51"
+                       WidthRequest="51"
+                       Padding="0"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center">
+                    <Label Text="OB"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           TextColor="White" />
+                </Frame>
+            </StackLayout>
+        </Grid>
+
+        <!-- Main Content Layout -->
+        <Grid ColumnSpacing="0" RowSpacing="0" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70" />
+                <!-- Left column fixed width -->
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Left Sidebar -->
+            <StackLayout Grid.Column="0"
+                         Orientation="Vertical"
+                         BackgroundColor="black"
+                         Padding="10"
+                         VerticalOptions="FillAndExpand"
+                         Spacing="0">
+
+                <!-- Top Section (2 Images) -->
+                <StackLayout VerticalOptions="Start"
+                             Orientation="Vertical"
+                             Spacing="20"
+                             HeightRequest="150">
+                    <!-- Customize as needed -->
+
+                    <Image Source="menu.png"
+                           HeightRequest="30"
+                           WidthRequest="30"
+                           HorizontalOptions="Center" />
+
+                    <Image Source="caution.png"
+                           HeightRequest="30"
+                           WidthRequest="30"
+                           HorizontalOptions="Center" />
+                </StackLayout>
+
+                <!-- Spacer -->
+                <BoxView VerticalOptions="FillAndExpand" HeightRequest="0" />
+
+                <!-- Bottom Section (4 Images) -->
+                <StackLayout VerticalOptions="End"
+                             Orientation="Vertical"
+                             Spacing="20"
+                             HeightRequest="180">
+                    <!-- Customize as needed -->
+
+                    <Image Source="line.png"
+                           HeightRequest="30"
+                           WidthRequest="30"
+                           HorizontalOptions="Center" />
+
+                    <Image Source="question.png"
+                           HeightRequest="20"
+                           WidthRequest="20"
+                           HorizontalOptions="Center" />
+
+                    <Image Source="setting.png"
+                           HeightRequest="20"
+                           WidthRequest="20"
+                           HorizontalOptions="Center" />
+
+                    <Image Source="uploadArrow.png"
+                           HeightRequest="20"
+                           WidthRequest="20"
+                           HorizontalOptions="Center" />
+                </StackLayout>
+
+            </StackLayout>
+
+            <!-- Right Content -->
+            <StackLayout Grid.Column="1" Padding="24" Spacing="15" BackgroundColor="#EAEAEA">
+                <!-- Breadcrumbs -->
+                <Label Text="HOMEPAGE / MY WORK / DWELLING UNIT / CAPI"
+                       FontSize="11"
+                       TextColor="Gray" />
+
+
+
+                <!-- Two-column layout with inputs and button -->
+                <Grid ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Left Column Inputs -->
+                    <StackLayout Grid.Column="0"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="Start"
+                                 Spacing="20">
+                        <StackLayout Orientation="Horizontal" Spacing="10" VerticalOptions="Center">
+                            <!-- Title -->
+                            <Label Text="Household Questionnaire - Mphogola"
+                                   FontSize="24"
+                                   FontAttributes="Bold"
+                                   TextColor="Black" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!-- Right Column Button -->
+                    <StackLayout Grid.Column="1"
+                                 VerticalOptions="Start"
+                                 HorizontalOptions="End">
+                        <Button Text="Start Interview"
+                                BackgroundColor="#628BCE"
+                                TextColor="White"
+                                WidthRequest="200"
+                                HeightRequest="48"
+                                CornerRadius="8"
+                                IsEnabled="False"
+                                />
+                    </StackLayout>
+                </Grid>
+
+                <Grid RowSpacing="0" ColumnSpacing="0" Padding="0, 0, 0, 0">
+
+                    <!-- Main Column Definitions -->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <!-- 20% -->
+                        <ColumnDefinition Width="8*" />
+                        <!-- 80% -->
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Left Sidebar -->
+
+                    <Frame Grid.Column="0"
+                           CornerRadius="8"
+                           BorderColor="#F0F3F8"
+                           Padding="0"
+                           Margin="0"
+                           HasShadow="True"
+                           BackgroundColor="#F0F3F8">
+
+                        <StackLayout BackgroundColor="#F0F3F8"
+                                     VerticalOptions="FillAndExpand"
+                                     Spacing="0">
+
+                            <!-- Title Section with top-left and top-right radius -->
+                            <Frame BackgroundColor="#344562"
+                                   Padding="15"
+                                   HasShadow="False"
+                                   Margin="0"
+                                   HorizontalOptions="FillAndExpand">
+                                <Label Text="Cover Page"
+                                       FontSize="20"
+                                       FontAttributes="Bold"
+                                       TextColor="White"
+
+                                       />
+                            </Frame>
+
+                            <!-- Other content can go here -->
+                            <Frame BackgroundColor="#8192AE"
+                                   Padding="15"
+                                   HasShadow="False"
+                                   Margin="0"
+                                   HorizontalOptions="FillAndExpand">
+                                <Label Text="Household Member Information"
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       TextColor="White" />
+                            </Frame>
+                            <StackLayout Spacing="0" Padding="15,0,0,0">
+                                <!-- Frame with Title -->
+                                <Frame BackgroundColor="#F0F3F8"
+                                       Padding="0,15,0,15"
+                                       HasShadow="False"
+                                       Margin="0"
+                                       HorizontalOptions="FillAndExpand"
+                                       CornerRadius="0">
+                                    <Label Text="Demographics"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#344562" />
+                                </Frame>
+
+                                <!-- Simulated Bottom Border -->
+                                <BoxView HeightRequest="1"
+                                         BackgroundColor="#C2C2C2"
+                                         WidthRequest="290"
+                                         HorizontalOptions="Start" />
+                            </StackLayout>
+                            <StackLayout Spacing="0" Padding="15,0,0,0">
+                                <!-- Frame with Title -->
+                                <Frame BackgroundColor="#F0F3F8"
+                                       Padding="0,15,0,15"
+                                       HasShadow="False"
+                                       Margin="0"
+                                       HorizontalOptions="FillAndExpand"
+                                       CornerRadius="0">
+                                    <Label Text="Migration"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#344562" />
+                                </Frame>
+
+                                <!-- Simulated Bottom Border -->
+                                <BoxView HeightRequest="1"
+                                         BackgroundColor="#C2C2C2"
+                                         WidthRequest="290"
+                                         HorizontalOptions="Start" />
+                            </StackLayout>
+                            <StackLayout Spacing="0" Padding="15,0,0,0">
+                                <!-- Frame with Title -->
+                                <Frame BackgroundColor="#F0F3F8"
+                                       Padding="0,15,0,15"
+                                       HasShadow="False"
+                                       Margin="0"
+                                       HorizontalOptions="FillAndExpand"
+                                       CornerRadius="0">
+                                    <Label Text="General Health and Functioning"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#344562" />
+                                </Frame>
+
+                                <!-- Simulated Bottom Border -->
+                                <BoxView HeightRequest="1"
+                                         BackgroundColor="#C2C2C2"
+                                         WidthRequest="290"
+                                         HorizontalOptions="Start" />
+                            </StackLayout>
+                            <StackLayout Spacing="0" Padding="15,0,0,0">
+                                <!-- Frame with Title -->
+                                <Frame BackgroundColor="#F0F3F8"
+                                       Padding="0,15,0,15"
+                                       HasShadow="False"
+                                       Margin="0"
+                                       HorizontalOptions="FillAndExpand"
+                                       CornerRadius="0">
+                                    <Label Text="Parental Survival"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#344562" />
+                                </Frame>
+
+                                <!-- Simulated Bottom Border -->
+                                <BoxView HeightRequest="1"
+                                         BackgroundColor="#C2C2C2"
+                                         WidthRequest="290"
+                                         HorizontalOptions="Start" />
+                            </StackLayout>
+                            <StackLayout Spacing="0" Padding="15,0,0,0">
+                                <!-- Frame with Title -->
+                                <Frame BackgroundColor="#F0F3F8"
+                                       Padding="0,15,0,15"
+                                       HasShadow="False"
+                                       Margin="0"
+                                       HorizontalOptions="FillAndExpand"
+                                       CornerRadius="0">
+                                    <Label Text="Education"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#344562" />
+                                </Frame>
+
+                                <!-- Simulated Bottom Border -->
+                                <BoxView HeightRequest="1"
+                                         BackgroundColor="#C2C2C2"
+                                         WidthRequest="290"
+                                         HorizontalOptions="Start" />
+                            </StackLayout>
+                            <StackLayout Spacing="0" Padding="15,0,0,0">
+                                <!-- Frame with Title -->
+                                <Frame BackgroundColor="#F0F3F8"
+                                       Padding="0,15,0,15"
+                                       HasShadow="False"
+                                       Margin="0"
+                                       HorizontalOptions="FillAndExpand"
+                                       CornerRadius="0">
+                                    <Label Text="Income"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#344562" />
+                                </Frame>
+
+                                <!-- Simulated Bottom Border -->
+                                <BoxView HeightRequest="1"
+                                         BackgroundColor="#C2C2C2"
+                                         WidthRequest="290"
+                                         HorizontalOptions="Start" />
+                            </StackLayout>
+                            <StackLayout Spacing="0" Padding="15,0,0,0">
+                                <!-- Frame with Title -->
+                                <Frame BackgroundColor="#F0F3F8"
+                                       Padding="0,15,0,15"
+                                       HasShadow="False"
+                                       Margin="0"
+                                       HorizontalOptions="FillAndExpand"
+                                       CornerRadius="0">
+                                    <Label Text="Employment"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#344562" />
+                                </Frame>
+
+                                <!-- Simulated Bottom Border -->
+                                <BoxView HeightRequest="1"
+                                         BackgroundColor="#C2C2C2"
+                                         WidthRequest="290"
+                                         HorizontalOptions="Start" />
+                            </StackLayout>
+                            <StackLayout Spacing="0" Padding="15,0,0,0">
+                                <!-- Frame with Title -->
+                                <Frame BackgroundColor="#F0F3F8"
+                                       Padding="0,15,0,15"
+                                       HasShadow="False"
+                                       Margin="0"
+                                       HorizontalOptions="FillAndExpand"
+                                       CornerRadius="0">
+                                    <Label Text="Fertility"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#344562" />
+                                </Frame>
+
+                                <!-- Simulated Bottom Border -->
+                                <BoxView HeightRequest="1"
+                                         BackgroundColor="#C2C2C2"
+                                         WidthRequest="290"
+                                         HorizontalOptions="Start" />
+                            </StackLayout>
+                            <StackLayout Spacing="0" Padding="15,0,0,0">
+                                <!-- Frame with Title -->
+                                <Frame BackgroundColor="#F0F3F8"
+                                       Padding="0,15,0,15"
+                                       HasShadow="False"
+                                       Margin="0"
+                                       HorizontalOptions="FillAndExpand"
+                                       CornerRadius="0">
+                                    <Label Text="Housing, Household Goods and Services"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#344562" />
+                                </Frame>
+
+                                <!-- Simulated Bottom Border -->
+                                <BoxView HeightRequest="1"
+                                         BackgroundColor="#C2C2C2"
+                                         WidthRequest="290"
+                                         HorizontalOptions="Start" />
+                            </StackLayout>
+                            <StackLayout Spacing="0" Padding="15,0,0,0">
+                                <!-- Frame with Title -->
+                                <Frame BackgroundColor="#F0F3F8"
+                                       Padding="0,15,0,15"
+                                       HasShadow="False"
+                                       Margin="0"
+                                       HorizontalOptions="FillAndExpand"
+                                       CornerRadius="0">
+                                    <Label Text="Agricultural Activities and Food Security"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#344562" />
+                                </Frame>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </Frame>
+
+
+
+                    <!-- Right Content Section -->
+                    <Grid Grid.Column="1" Padding="20,0,0,0" RowSpacing="20" VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <!-- Top: Form/Card -->
+                            <RowDefinition Height="Auto" />
+                            <!-- Middle: Next Button -->
+                            <RowDefinition Height="*" />
+                            <!-- Spacer: takes all remaining space -->
+                            <RowDefinition Height="Auto" />
+                            <!-- Bottom: End Interview -->
+                        </Grid.RowDefinitions>
+
+                        <!-- Top: Form -->
+                        <Frame Grid.Row="0"
+                               Padding="20"
+                               BorderColor="White"
+                               CornerRadius="8"
+                               HasShadow="True"
+                               BackgroundColor="White">
+
+                            <StackLayout Spacing="20">
+
+                                <!-- Title -->
+                                <Label Text="Household Member Information"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="#344562"
+                                       HorizontalOptions="Start" />
+
+                                <!-- Description -->
+                                <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                       FontSize="16"
+                                       TextColor="#2D2D2D"
+                                       LineBreakMode="WordWrap" />
+
+                                <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                       FontSize="16"
+                                       TextColor="#2D2D2D"
+                                       LineBreakMode="WordWrap" />
+
+                                <!-- Input Field -->
+                                <StackLayout Padding="0,30,0,50">
+                                    <Label Text="Member name"
+                                           FontAttributes="None"
+                                           FontSize="16"
+                                           TextColor="Black" />
+                                    <Frame BackgroundColor="#EAEDF2"
+                                           CornerRadius="8"
+                                           Padding="5"
+                                           HasShadow="False"
+                                           Margin="0">
+                                        <Entry Placeholder="Enter name here"
+                                               BackgroundColor="Transparent"
+                                               FontSize="14"
+                                               />
+                                    </Frame>
+                                </StackLayout>
+
+                                <StackLayout x:Name="AccordionContainer" Padding="20">
+
+                                    <!-- Accordion Header -->
+                                    <StackLayout x:Name="AccordionHeader" Orientation="Horizontal">
+                                        <Label Text="Click to Toggle" FontAttributes="Bold" />
+                                        <Image Source="arrow_down.png" HeightRequest="16" WidthRequest="16" />
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnAccordionHeaderTapped" />
+                                        </StackLayout.GestureRecognizers>
+                                    </StackLayout>
+
+                                    <!-- Accordion Body -->
+                                    <StackLayout x:Name="AccordionBody" IsVisible="False" Spacing="10" Padding="10,5">
+                                        <Label Text="This is the hidden accordion content." />
+                                        <Label Text="You can add more items here." />
+                                    </StackLayout>
+
+                                </StackLayout>
+
+
+                                <!-- Button -->
+                                <Button Text="Add Member"
+                                        BackgroundColor="#628BCE"
+                                        TextColor="White"
+                                        WidthRequest="180"
+                                        HeightRequest="48"
+                                        CornerRadius="8"
+                                        HorizontalOptions="Start"
+
+                                        />
+
+                            </StackLayout>
+
+                        </Frame>
+
+
+                        <!-- Middle: Next Button -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <BoxView Grid.Column="0" />
+                            <Button Grid.Column="1"
+                                    Text="Next"
+                                    BackgroundColor="#628BCE"
+                                    TextColor="White"
+                                    WidthRequest="150"
+                                    HeightRequest="48"
+                                    CornerRadius="8" />
+                        </Grid>
+
+                        <!-- Bottom: End Interview Button aligned to bottom -->
+                        <Grid Grid.Row="3"
+                              VerticalOptions="EndAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <BoxView Grid.Column="0" />
+                            <Button Grid.Column="1"
+                                    Text="End Interview"
+                                    BackgroundColor="#315CA3"
+                                    TextColor="White"
+                                    WidthRequest="150"
+                                    HeightRequest="48"
+                                    CornerRadius="8" />
+                        </Grid>
+                    </Grid>
+
+
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>

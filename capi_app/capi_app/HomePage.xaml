@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="capi_app.HomePage"
+             BackgroundColor="#F6F6F6"
+             Padding="0">
+
+    <Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="6*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- LEFT COLUMN: Background + Gradient + Bottom Text -->
+        <Grid Grid.Column="0">
+
+            <!-- Background image -->
+            <Image Source="banner.png"
+                   Aspect="AspectFill" />
+
+            <!-- Gradient overlay -->
+            <BoxView>
+                <BoxView.Background>
+                    <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                        <GradientStop Color="#000000" Offset="0.0" />
+                        <GradientStop Color="#0300003D" Offset="1.0" />
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+
+            <!-- Bottom-centered content -->
+            <StackLayout VerticalOptions="End"
+                         HorizontalOptions="Center"
+                         Padding="20"
+                         Margin="0,0,0,60">
+                <Label Text="Get started now !"
+                       TextColor="White"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center" />
+                <Label Text="Start making a difference today."
+                       TextColor="White"
+                       FontSize="16"
+                       HorizontalTextAlignment="Center" />
+            </StackLayout>
+        </Grid>
+
+        <!-- RIGHT COLUMN: Centered Form + Footer -->
+        <Grid Grid.Column="1" BackgroundColor="#F6F6F6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+
+            <!-- Form Body -->
+            <StackLayout Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+                <StackLayout>
+                    <Image Source="logo.png"
+                   WidthRequest="220"
+                   HeightRequest="100"
+                   HorizontalOptions="Start"
+                  />
+                    <Label Text="Log In" FontSize="24" FontAttributes="Bold" TextColor="Black" />
+                    <Label Text="Debug: 3 Interviews" FontSize="14" TextColor="Black" />
+                </StackLayout>
+
+                <!-- Cards Grid -->
+                <Grid ColumnSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Card 1: My Work -->
+                    <Frame 
+                        Grid.Column="0" 
+                        BackgroundColor="#EAEDF2" 
+                        CornerRadius="8" 
+                        HeightRequest="140" 
+                        WidthRequest="130" 
+                        Padding="20" 
+                        HasShadow="False">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTappedMyWork" />
+                        </Frame.GestureRecognizers>
+                        <StackLayout VerticalOptions="Center"
+             HorizontalOptions="Center"
+             Spacing="15">
+
+                            <!-- Circle background -->
+                            <Frame BackgroundColor="#315CA3"
+           Padding="0"
+           CornerRadius="100"
+           HeightRequest="83"
+           WidthRequest="83"
+           HasShadow="False"
+           HorizontalOptions="Center"
+           VerticalOptions="Center">
+
+                                <!-- Center the image manually -->
+                                <Grid>
+                                    <Image Source="briefcase.png"
+                   HeightRequest="35"
+                   WidthRequest="35"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Aspect="AspectFit" />
+                                </Grid>
+                            </Frame>
+
+                            <!-- Label -->
+                            <Label Text="My Work"
+           FontSize="13"
+           FontAttributes="Bold"
+           TextColor="#315CA3"
+           HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Card 2: Dashboard -->
+                    <Frame 
+                        Grid.Column="1" 
+                        BackgroundColor="#EAEDF2" 
+                        CornerRadius="8" 
+                        HeightRequest="140"
+                        WidthRequest="130"
+                        Padding="20" 
+                        HasShadow="False">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTappedDashboard" />
+                        </Frame.GestureRecognizers>
+                        <StackLayout VerticalOptions="Center"
+             HorizontalOptions="Center"
+             Spacing="15">
+
+                            <!-- Circle background -->
+                            <Frame BackgroundColor="#315CA3"
+           Padding="0"
+           CornerRadius="100"
+           HeightRequest="83"
+           WidthRequest="83"
+           HasShadow="False"
+           HorizontalOptions="Center"
+           VerticalOptions="Center">
+
+                                <!-- Center the image -->
+                                <Grid>
+                                    <Image Source="files.png"
+                   HeightRequest="35"
+                   WidthRequest="35"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Aspect="AspectFit" />
+                                </Grid>
+                            </Frame>
+
+                            <!-- Label -->
+                            <Label Text="Dashboard"
+           FontSize="13"
+           FontAttributes="Bold"
+           TextColor="#315CA3"
+           HorizontalTextAlignment="Center" />
+                        </StackLayout>
+
+                    </Frame>
+
+                    <!-- Card 3: My Work Sign-Off -->
+                    <Frame 
+                        Grid.Column="2" 
+                        BackgroundColor="#EAEDF2" 
+                        CornerRadius="8" 
+                        HeightRequest="140"
+                        WidthRequest="130"
+                        Padding="20" 
+                        HasShadow="False">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTappedSignOff" />
+                        </Frame.GestureRecognizers>
+                        <StackLayout VerticalOptions="Center"
+             HorizontalOptions="Center"
+             Spacing="15">
+
+                            <!-- Circle background -->
+                            <Frame BackgroundColor="#315CA3"
+           Padding="0"
+           CornerRadius="120"
+           HeightRequest="83"
+           WidthRequest="83"
+           HasShadow="False"
+           HorizontalOptions="Center"
+           VerticalOptions="Center">
+
+                                <!-- Center the image -->
+                                <Grid>
+                                    <Image Source="dashboard.png"
+                   HeightRequest="35"
+                   WidthRequest="35"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Aspect="AspectFit" />
+                                </Grid>
+                            </Frame>
+
+                            <!-- Label -->
+                            <Label Text="My Work Sign-Off"
+           FontSize="13"
+           FontAttributes="Bold"
+           TextColor="#315CA3"
+           HorizontalTextAlignment="Center" />
+                        </StackLayout>
+
+                    </Frame>
+                </Grid>
+            </StackLayout>
+
+            <!-- Footer -->
+            <StackLayout Grid.Row="1"
+                         BackgroundColor="Black"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="End"
+                         HeightRequest="70">
+                <Label Text="© Statistics South Africa Privacy Policy Security"
+                       TextColor="White"
+                       FontSize="14"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
